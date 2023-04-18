@@ -1,6 +1,6 @@
 package BinaryTree;
 
-public class BinaryNode<T> {
+public class BinaryNode<T> implements TreePrinter.PrintableNode {
   private T value;
   private BinaryNode<T> left;
   private BinaryNode<T> right;
@@ -24,13 +24,6 @@ public class BinaryNode<T> {
   public void setLeft(BinaryNode<T> left) { this.left = left; }
   public void setRight(BinaryNode<T> right) { this.right = right; }
   public String toString() {
-    boolean hasLeft = this.hasLeft();
-    boolean hasRight = this.hasRight();
-
-    return (
-      (hasLeft ? ("\n" + this.getLeft().toString() + "<--" ) : "") + 
-      this.getValue().toString() +
-      (hasRight ? ("-->" + this.getRight().toString()) + "\n" : "") 
-    );
+    return this.getValue().toString();
   }
 }

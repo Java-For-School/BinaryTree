@@ -14,8 +14,8 @@ public class IsExist {
       iterator.setRight(right);
       iterator = iterator.getLeft();
     }
+    TreePrinter.print(node);
 
-    System.out.println(node.toString());
     System.out.println(isExist(node, 1));
     System.out.println(isExist(node, 69));
   }

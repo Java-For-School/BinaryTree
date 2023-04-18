@@ -1,0 +1,31 @@
+package BinaryTree;
+
+public class PrintableBinaryNode extends BinaryNode<T> () {
+  private int min; 
+  private int max;
+  
+  public PrintableBinaryNode() {
+    this.min = 0;
+    this.max = 0;
+  } 
+  public void findMinMax(BinaryNode<T> node, hd) {
+    if (node == null) return;
+    if (hd < min) this.min = hd;
+    else if (hd > max) this.max = hd;
+    
+    findMinMax(node.getLeft(), min, max, hd - 1);
+    findMinMax(node.getRight(), min, max, hd + 1);
+  }
+
+  public void printLine(BinaryNode node, int line, int hd) {
+    if (node == null) return;
+    if (line == hd) System.out.print(node.getValue() + " ");
+    
+    printLine(node.getLeft(), line, hd - 1);
+    printLine(node.getRight(), line, hd + 1);
+  }
+
+  public void verticalOrder(BinaryNode node) {
+    findMinMax()
+  }
+}
